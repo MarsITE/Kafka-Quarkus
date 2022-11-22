@@ -1,0 +1,9 @@
+###
+PUT http://localhost:8082/comments/1
+Content-Type: application/json
+
+{
+"postId": "1234",
+"comment": "some valid comment 999",
+"type": "VERIFIED"
+}

@@ -8,6 +8,8 @@ import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Cacheable
@@ -15,8 +17,11 @@ import javax.persistence.Enumerated;
 @AllArgsConstructor
 public class Comment extends PanacheEntity {
 
+    @NotNull
     String postId;
 
+    @NotNull
+    @Size(min = 20, max = 1024)
     String comment;
 
     @Enumerated(EnumType.STRING)
