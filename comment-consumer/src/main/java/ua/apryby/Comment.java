@@ -1,8 +1,7 @@
 package ua.apryby;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Cacheable;
 import javax.persistence.Entity;
@@ -13,6 +12,8 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Cacheable
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Comment extends PanacheEntity {
