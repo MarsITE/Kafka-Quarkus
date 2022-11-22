@@ -1,0 +1,7 @@
+###
+POST http://localhost:8080/comments/123
+Content-Type: application/json
+
+{
+"comment": "some invalid comment lol"
+}

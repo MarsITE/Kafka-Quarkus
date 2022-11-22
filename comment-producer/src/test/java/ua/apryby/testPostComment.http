@@ -4,5 +4,5 @@ Content-Type: application/json
 
 {
 "postId": "123",
-"comment": "some valid comment 123dqwdq"
+"comment": "some valid comment 123"
 }
