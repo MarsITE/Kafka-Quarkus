@@ -34,7 +34,7 @@ services:
       - my-network
 
   db:
-    image: docker://postgres
+    image: postgres
     restart: always
     environment:
       - POSTGRES_USER=test
@@ -100,3 +100,6 @@ services:
 networks:
   my-network:
     name: kafka
+
+volumes:
+  db:
