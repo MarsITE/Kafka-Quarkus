@@ -23,8 +23,8 @@ public class CommentResource {
     @Consumes(value = MediaType.APPLICATION_JSON)
     @NonBlocking
     public void postCommentWithPostId(@RestPath @NotNull String postId,
-                                      @NotNull @Size(min = 20, max = 1024) String comment) {
-        final Comment obj = new Comment(postId, comment);
+                                      @Valid CommentMessage comment) {
+        final Comment obj = new Comment(postId, comment.getComment());
 
         emitter.emitComment(obj);
     }

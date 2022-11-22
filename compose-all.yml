@@ -92,10 +92,10 @@ services:
     networks:
       - my-network
     environment:
+      KAFKA_BOOTSTRAP_SERVERS: 'kafka:9092'
       QUARKUS_DATASOURCE_USERNAME: 'test'
       QUARKUS_DATASOURCE_PASSWORD: 'test'
-      QUARKUS_DATASOURCE_REACTIVE_URL: 'vertx-reactive:postgresql://db:5432/comments'
-      KAFKA_BOOTSTRAP_SERVERS: 'kafka:9092'
+      QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://db:5432/comments'
 
 networks:
   my-network:

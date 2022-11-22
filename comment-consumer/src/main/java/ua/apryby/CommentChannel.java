@@ -1,4 +1,4 @@
-package org.acme;
+package ua.apryby;
 
 public final class CommentChannel {
     static final String COMMENTS_BLACKLIST = "comments_blacklist";

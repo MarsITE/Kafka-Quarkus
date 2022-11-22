@@ -1,4 +1,4 @@
-package org.acme;
+package ua.apryby;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

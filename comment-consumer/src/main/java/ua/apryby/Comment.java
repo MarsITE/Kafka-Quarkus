@@ -1,6 +1,6 @@
-package org.acme;
+package ua.apryby;
 
-import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
