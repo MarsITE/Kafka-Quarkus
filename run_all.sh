@@ -7,6 +7,8 @@
 
 set -Eeuo pipefail
 
+mvn clean package
+
 echo "Running docker compose"
 
 docker-compose up

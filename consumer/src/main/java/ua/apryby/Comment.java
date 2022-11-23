@@ -1,7 +1,10 @@
 package ua.apryby;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Cacheable;
 import javax.persistence.Entity;
@@ -34,6 +37,12 @@ public class Comment extends PanacheEntity {
 
     static Comment blackListed(String id, String comment) {
         return new Comment(id, comment, Type.BLACKLISTED);
+    }
+
+    void update(Comment newComment) {
+        this.postId = newComment.postId;
+        this.comment = newComment.comment;
+        this.type = newComment.type;
     }
 
     enum Type {

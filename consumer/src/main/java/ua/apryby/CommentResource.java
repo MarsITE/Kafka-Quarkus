@@ -2,6 +2,7 @@ package ua.apryby;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -40,23 +41,21 @@ public class CommentResource {
                 .map(it -> mapToDto((Comment) it)).toList();
     }
 
-    @POST
+    @PUT
     @Path("/{id}")
     @Transactional
     @Consumes(value = MediaType.APPLICATION_JSON)
-    public CommentDTO updateCommentById(@PathParam("id") Long id,
-                                        Comment comment) {
+    public Comment updateCommentById(@PathParam("id") Long id,
+                                        @Valid Comment comment) {
         Comment entity = Comment.findById(id);
 
         if (entity == null) {
             throw new NotFoundException();
         }
 
-        entity.postId = comment.postId;
-        entity.comment = comment.comment;
-        entity.type = comment.type;
+        entity.update(comment);
 
-        return mapToDto(entity);
+        return entity;
     }
 
     @DELETE
