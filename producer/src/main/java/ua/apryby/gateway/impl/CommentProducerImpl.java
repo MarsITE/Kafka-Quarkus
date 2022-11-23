@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 @ApplicationScoped
 public class CommentProducerImpl implements CommentProducer {
+
     @Inject
     @Channel("comment_requests")
     Emitter<String> emitter;

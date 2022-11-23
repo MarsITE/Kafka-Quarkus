@@ -9,8 +9,11 @@ import java.util.List;
 
 @RequiredArgsConstructor
 public class CommentSenderDispatcher {
+
     private final String message;
+
     private final Emitter<String> commentsProducer;
+
     private final Emitter<String> badCommentsProducer;
 
     CommentSenderStrategy validate(List<String> badWords) {

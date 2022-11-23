@@ -10,6 +10,7 @@ import java.util.List;
 @Path("/comments")
 @ApplicationScoped
 public class CommentResource {
+
     @GET
     @Transactional
     public List<CommentDTO> getAll() {

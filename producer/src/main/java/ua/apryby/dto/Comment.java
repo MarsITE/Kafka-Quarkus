@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 @ToString
 @Builder
 public final class Comment {
+
     @NotNull
     private String postId;
 

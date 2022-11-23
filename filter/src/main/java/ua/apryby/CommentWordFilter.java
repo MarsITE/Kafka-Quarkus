@@ -13,11 +13,14 @@ import java.util.List;
 
 @ApplicationScoped
 public class CommentWordFilter {
+
     @ConfigProperty(name = "ua.apryby.comment.words.blacklist")
     List<String> wordsBlacklist;
+
     @Inject
     @Channel("comments")
     Emitter<String> commentsProducer;
+
     @Inject
     @Channel("comments_blacklist")
     Emitter<String> badCommentsProducer;
