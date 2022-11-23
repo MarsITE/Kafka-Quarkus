@@ -1,3 +1,3 @@
 ###
-DELETE http://localhost:8082/comments/deleteVerified
+DELETE http://localhost:8082/comments/deleteBlacklisted
 
